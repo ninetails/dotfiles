@@ -1,0 +1,18 @@
+DOTFILES_EXEC=$HOME/.dotfiles/scripts/
+
+# dotfiles
+alias dotfiles="git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME"
+alias dfs="dotfiles status"
+alias dfd="dotfiles diff"
+alias dfl="dotfiles pull"
+alias dfp="dotfiles push"
+alias dfa="dotfiles add"
+alias dfc="dotfiles commit"
+alias dfechmod="find $DOTFILES_EXEC -iname '*.sh' -exec chmod +x '{}' \;"
+
+function dfe() {
+  dfechmod
+  executable="$1"
+  shift
+  command "$DOTFILES_EXEC$executable.sh" "$@"
+}
