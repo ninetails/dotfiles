@@ -16,3 +16,6 @@ function dfe() {
   shift
   command "$DOTFILES_EXEC$executable.sh" "$@"
 }
+
+# custom
+alias code="code-insiders"
